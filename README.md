@@ -1,2 +1,2 @@
-# See [Go Notes](GoNotes.md)
+# [Go Notes](GoNotes.md)
 
