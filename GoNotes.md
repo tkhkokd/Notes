@@ -1084,6 +1084,8 @@ func main() {
 ```
 
 ## Channels
+[Receiving values from channels in Go](https://stackoverflow.com/questions/51180089/receiving-values-from-channels-in-go)
+
 Channels are a typed conduit(pipeline) through which you can send and receive values with the channel operator ``` <-```.
 Channels must be created before use.
 
@@ -1115,11 +1117,21 @@ func main() {
   go sum(s[:len(s)/2], c)
   go sum(s[len(s)/2:], c)
 
-  x, y := <-c, <-c                 // receive from c
+  x, y := <-c, <-c                 // receive from c, "tuple assignments"
 
   fmt.Println(x, y, x+y)
 }
 ```
+```go
+x, y := <-c, <-c
+```
+is equal to
+
+```go
+x := <-c
+y := <-c
+```
+* The order in which two channels end up processing and writing to c is not guaranteed, therefore either one of the values will be assigned to x and y in different runs.
 
 
 
