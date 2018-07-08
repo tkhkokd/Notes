@@ -5,56 +5,56 @@ tasks:
 - How to organize additional notes on advanced topics related to the fundamental?
 - Publish this notes to a website and make it more user-friendly.
 
-[Pointers](#pointers)
-[Structs](#structs)
-&nbsp;&nbsp;&nbsp;[Assigning Struct to a variable](#assigning-struct-to-a-variable)
-&nbsp;&nbsp;&nbsp;[Pointer to Struct](#pointer-to-struct)
-&nbsp;&nbsp;&nbsp;[Struct Literals](#struct-literals)
-[Array](#array)
-[Slice](#slice)
-&nbsp;&nbsp;&nbsp;[Slice literals](#slice-literals)
-&nbsp;&nbsp;&nbsp;[Length and Capacity of slice](#length-and-capacity-of-slice)
-&nbsp;&nbsp;&nbsp;[Creating a slice with make](#creating-a-slice-with-make)
-&nbsp;&nbsp;&nbsp;[Slices of slices](#slices-of-slices)
-&nbsp;&nbsp;&nbsp;[Appending to a slice](#appending-to-a-slice)
-[Range](#range)
-&nbsp;&nbsp;&nbsp;[Range and loop](#range-and-loop)
-[Maps](#maps)
-&nbsp;&nbsp;&nbsp;[Map literals](#map-literals)
-&nbsp;&nbsp;&nbsp;[Mutating Maps](#mutating-maps)
-[Functions](#functions)
-&nbsp;&nbsp;&nbsp;[Arguments and Return Value Type](#arguments-and-return-value-type)
-&nbsp;&nbsp;&nbsp;[Named Return Values](#named-return-values)
-[Variables](#variables)
-&nbsp;&nbsp;&nbsp;[Variable declaration](#variable-declaration)
-[Constants](#constants)
-[Types](#types)
-&nbsp;&nbsp;&nbsp;[Basic types](#basic-types)
-&nbsp;&nbsp;&nbsp;[Figuring out variable type](#figuring-out-variable-type)
-[Type Conversion](#type-conversion)
-&nbsp;&nbsp;&nbsp;[Int to String](#int-to-string)
-[Conventions](#conventions)
-[Function Naming](#function-naming)
-[Loop](#loop)
-&nbsp;&nbsp;&nbsp;[For loop using init and post statements](#for-loop-using-init-and-post-statements)
-&nbsp;&nbsp;&nbsp;[For loop without init and post statements](#for-loop-without-init-and-post-statements)
-&nbsp;&nbsp;&nbsp;[While loop in Go](#while-loop-in-go)
-&nbsp;&nbsp;&nbsp;[Infinite loop](#infinite-loop)
-[If statement](#if-statement)
-&nbsp;&nbsp;&nbsp;[If statement with variable assignment](#if-statement-with-variable-assignment)
-[Switch](#switch)
-&nbsp;&nbsp;&nbsp;[Switch without condition](#switch-without-condition)
-[Defer](#defer)
-[Methods](#methods)
-&nbsp;&nbsp;&nbsp;[Pointers and functions](#pointers-and-functions)
-&nbsp;&nbsp;&nbsp;[Methods and pointer indirection](#methods-and-pointer-indirection)
-&nbsp;&nbsp;&nbsp;[Functions and Methods](#functions-and-methods)
-&nbsp;&nbsp;&nbsp;[A value or a pointer](#a-value-or-a-pointer)
-[Interface](#interface)
-&nbsp;&nbsp;&nbsp;[Interface2](#interface2)
-&nbsp;&nbsp;&nbsp;[Implicit implementation of interfaces](#implicit-implementation-of-interfaces)
-[Go routines](#go-routines)
-[Channels](#channels)
+[Pointers](#pointers)<br/>
+[Structs](#structs)<br/>
+&nbsp;&nbsp;&nbsp;[Assigning Struct to a variable](#assigning-struct-to-a-variable)<br/>
+&nbsp;&nbsp;&nbsp;[Pointer to Struct](#pointer-to-struct)<br/>
+&nbsp;&nbsp;&nbsp;[Struct Literals](#struct-literals)<br/>
+[Array](#array)<br/>
+[Slice](#slice)<br/>
+&nbsp;&nbsp;&nbsp;[Slice literals](#slice-literals)<br/>
+&nbsp;&nbsp;&nbsp;[Length and Capacity of slice](#length-and-capacity-of-slice)<br/>
+&nbsp;&nbsp;&nbsp;[Creating a slice with make](#creating-a-slice-with-make)<br/>
+&nbsp;&nbsp;&nbsp;[Slices of slices](#slices-of-slices)<br/>
+&nbsp;&nbsp;&nbsp;[Appending to a slice](#appending-to-a-slice)<br/>
+[Range](#range)<br/>
+&nbsp;&nbsp;&nbsp;[Range and loop](#range-and-loop)<br/>
+[Maps](#maps)<br/>
+&nbsp;&nbsp;&nbsp;[Map literals](#map-literals)<br/>
+&nbsp;&nbsp;&nbsp;[Mutating Maps](#mutating-maps)<br/>
+[Functions](#functions)<br/>
+&nbsp;&nbsp;&nbsp;[Arguments and Return Value Type](#arguments-and-return-value-type)<br/>
+&nbsp;&nbsp;&nbsp;[Named Return Values](#named-return-values)<br/>
+[Variables](#variables)<br/>
+&nbsp;&nbsp;&nbsp;[Variable declaration](#variable-declaration)<br/>
+[Constants](#constants)<br/>
+[Types](#types)<br/>
+&nbsp;&nbsp;&nbsp;[Basic types](#basic-types)<br/>
+&nbsp;&nbsp;&nbsp;[Figuring out variable type](#figuring-out-variable-type)<br/>
+[Type Conversion](#type-conversion)<br/>
+&nbsp;&nbsp;&nbsp;[Int to String](#int-to-string)<br/>
+[Conventions](#conventions)<br/>
+[Function Naming](#function-naming)<br/>
+[Loop](#loop)<br/>
+&nbsp;&nbsp;&nbsp;[For loop using init and post statements](#for-loop-using-init-and-post-statements)<br/>
+&nbsp;&nbsp;&nbsp;[For loop without init and post statements](#for-loop-without-init-and-post-statements)<br/>
+&nbsp;&nbsp;&nbsp;[While loop in Go](#while-loop-in-go)<br/>
+&nbsp;&nbsp;&nbsp;[Infinite loop](#infinite-loop)<br/>
+[If statement](#if-statement)<br/>
+&nbsp;&nbsp;&nbsp;[If statement with variable assignment](#if-statement-with-variable-assignment)<br/>
+[Switch](#switch)<br/>
+&nbsp;&nbsp;&nbsp;[Switch without condition](#switch-without-condition)<br/>
+[Defer](#defer)<br/>
+[Methods](#methods)<br/>
+&nbsp;&nbsp;&nbsp;[Pointers and functions](#pointers-and-functions)<br/>
+&nbsp;&nbsp;&nbsp;[Methods and pointer indirection](#methods-and-pointer-indirection)<br/>
+&nbsp;&nbsp;&nbsp;[Functions and Methods](#functions-and-methods)<br/>
+&nbsp;&nbsp;&nbsp;[A value or a pointer](#a-value-or-a-pointer)<br/>
+[Interface](#interface)<br/>
+&nbsp;&nbsp;&nbsp;[Interface2](#interface2)<br/>
+&nbsp;&nbsp;&nbsp;[Implicit implementation of interfaces](#implicit-implementation-of-interfaces)<br/>
+[Go routines](#go-routines)<br/>
+[Channels](#channels)<br/>
 
 
 
