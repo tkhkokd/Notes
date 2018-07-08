@@ -1,6 +1,6 @@
 # Notes Index
-## [Go Notes](GoNotes.md)
-## [JSON in GO](GoNotes_JSON.md)
+## [Fundamental Go](Fundamental_Go.md)
+## [Practical Go](Practical_Go.md)
 ## [CS Notes](CSNotes.md)
 ## [Rails Notes](RailsNotes.md)
 ## [Ruby Notes](RubyNotes.md)

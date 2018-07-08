@@ -1,4 +1,4 @@
-# Golang Notes
+# Fundamental Go
 
 tasks:
 - Split this note
