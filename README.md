@@ -3,4 +3,4 @@
 ## [Practical Go](Practical_Go.md)
 ## [CS Notes](CSNotes.md)
 ## [Rails Notes](RailsNotes.md)
-## [Ruby Notes](RubyNotes.md)
+## [Practical Ruby](Practical_Ruby.md)
