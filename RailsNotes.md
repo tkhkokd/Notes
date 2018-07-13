@@ -1,5 +1,10 @@
 # Rails Notes
 
+[Passing variables to Javascript](#passing-variables-to-javascript)<br/>
+[Accessing nested parameter attributes](#accessing-nested-parameter-attributes)<br/>
+[Solutions to Errors](#solutions-to-errors)<br/>
+&nbsp;&nbsp;&nbsp;[simple_form, passing instance variables](#simple-form,-passing-instance-variables)<br/>
+
 ## Passing variables to Javascript
 
 Controller
@@ -12,7 +17,22 @@ View
  var number = <%= @number %>;
 </script>
 ```
+## Accessing nested parameter attributes
 
+```ruby
+item_params = {
+  "name" => "",
+  "description" => "",
+  "tag_list" => "",
+  "user_items_attributes" => {"0" => {"user_id" => "8"}},
+  "created_by" => 8,
+  "status" => 0
+}
+```
+
+```ruby
+params[:albums][:phots]['0']
+```
 
 
 ## Solutions to Errors
