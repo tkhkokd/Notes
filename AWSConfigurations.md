@@ -33,7 +33,7 @@ RDS_USERNAME=***********
 RDS_PASSWORD=*********** RDS_HOSTNAME=***********.rds.amazonaws.com // The endpoint
 RDS_PORT=****
 ```
-* ENV variables have to be updated after rebuilding the environment.
+* RDS_HOSTNAME has to be updated after rebuilding the environment.
 
 
 In Rails App ```config/database.yml```
@@ -49,6 +49,23 @@ production:
   password: <%= ENV['RDS_PASSWORD'] %>
   host: <%= ENV['RDS_HOSTNAME'] %>
   port: <%= ENV['RDS_PORT'] %>
+```
+
+### Solutions to Errors
+
+#### Bundle install fails => Upgrade the instance memory
+```
+An error occurred while installing nokogiri (1.6.8.1), and Bundler cannot
+continue.
+Make sure that `gem install nokogiri -v '1.6.8.1'` succeeds before bundling.
+
+Installing nokogiri 1.6.8.1 with native extensions
+
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    current directory: /opt/rubies/ruby-2.3.1/lib/ruby/gems/2.3.0/gems/nokogiri-1.6.8.1/ext/nokogiri
+/opt/rubies/ruby-2.3.1/bin/ruby -r ./siteconf20161205-3296-zuwti1.rb extconf.rb
+Cannot allocate memory - /opt/rubies/ruby-2.3.1/bin/ruby -r ./siteconf20161205-3296-zuwti1.rb extconf.rb 2>&1
 ```
 
 
