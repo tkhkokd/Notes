@@ -103,4 +103,66 @@ $ eb setenv SECRET_KEY_BASE=$(rails secret) -e Testenv
 ```
 
 
+## AWS IoT Configuration
+
+
+Sending Message from clients
+Supported protocols : MQTT, HTTP, Websocket
+https://docs.aws.amazon.com/iot/latest/developerguide/protocols.html
+
+HTTP - use curl to emulate a button press
+```
+curl --tlsv1.2 --cacert root-CA.crt --cert 4b7828d2e5-certificate.pem.crt --key 4b7828d2e5-private.pem.key -X POST -d "{ \"serialNumber\": \"G030JF053216F1BS\", \"clickType\": \"SINGLE\", \"batteryVoltage\": \"2000mV\" }" "https://a1pn10j0v8htvw.iot.us-east-1.amazonaws.com:8443/topics/iotbutton/virtualButton?qos=1"
+```
+--tlsv1.2 (MUST)
+curl installed with OpenSSL and use version 1.2 of TLS.
+
+--cacert <filename>
+CA certificate file name to verify the peer.
+
+--cert <filename>
+The client certificate filename.
+
+--key <filename>
+The private key filename.
+
+-X POST
+The type of request.
+
+-d <data>
+POST data you want to publish
+
+"https://..."
+The REST API endpoint for the device.
+At AWS IoT console choose Registry to expand your choices.
+Parameters: port, topic, the quality of service in a query string (?qos=1).
+
+
+
+## Accessing Database(Postgresql) from AWS CLI
+
+List RDS instances
+```
+aws rds describe-db-instances
+```
+
+Connect to the DB
+
+```
+psql \
+   --host=<DB instance endpoint> \
+   --port=<port> \
+   --username=<master user name> \
+   --password \
+   --dbname=<database name>
+```
+You will be prompted for the password.
+* remove \
+
+
+
+
+
+
+
 
