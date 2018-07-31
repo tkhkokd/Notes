@@ -159,6 +159,22 @@ psql \
 You will be prompted for the password.
 * remove \
 
+## IoT Devices
+
+Shadow RESTful API endpoint URL
+
+```
+https://ENDPOINT/things/THING_NAME/shadow
+```
+Get endpoint url
+```
+aws iot describe-endpoint
+```
+List things from CLI
+```
+aws iot list-things
+```
+
 
 
 
