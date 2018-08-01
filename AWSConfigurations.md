@@ -1,3 +1,39 @@
+## AWS SDK
+
+```
+pip3 install boto3
+aws configure
+// Set credentials
+python3
+```
+
+## Lambda
+
+```python
+def handler_name(event, context):   # event: some data passed by the event(trigger)
+    ...                             # context: runtime info
+    return some_value
+```
+### Invoke lambda function using SDK
+
+```
+import boto3
+
+client = boto3.client('lambda')
+
+response = client.invoke(
+    FunctionName='string',
+    InvocationType='Event'|'RequestResponse'|'DryRun',
+    LogType='None'|'Tail',
+    ClientContext='string',
+    Payload=b'bytes'|file,
+    Qualifier='string'
+)
+```
+Invocation Type
+  Event: asyncronous
+  RequestResponse: syncronous
+  DryRun: authorization required before running
 
 ##Deploying WebApp to AWS using Elastic Beanstalk.
 
@@ -15,7 +51,7 @@ $ eb deploy ENVIRONMENT_NAME
 // ENVIRONMENT_NAME can be found at the AWS console.
 ```
 
-## EB CLI Commands
+### EB CLI Commands
 
 ```shell
 $ eb init -i  // Change region
@@ -51,9 +87,9 @@ production:
   port: <%= ENV['RDS_PORT'] %>
 ```
 
-### Solutions to Errors
+## Solutions to Errors
 
-#### Bundle install fails
+### Bundle install fails
 ```
 An error occurred while installing nokogiri (1.6.8.1), and Bundler cannot
 continue.
@@ -80,7 +116,7 @@ $ git add vendor/cache
 $ git ci -m "added cache gems"
 ```
 
-#### Error when bundle install Devise
+### Error when bundle install Devise
 ```
  Bundler will use `/tmp/bundler/home/webapp' as your home directory temporarily.
   rake aborted!
@@ -159,7 +195,7 @@ psql \
 You will be prompted for the password.
 * remove \
 
-## IoT Devices
+### IoT Devices
 
 Shadow RESTful API endpoint URL
 
@@ -174,8 +210,6 @@ List things from CLI
 ```
 aws iot list-things
 ```
-
-
 
 
 
