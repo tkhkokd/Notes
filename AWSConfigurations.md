@@ -215,6 +215,9 @@ aws iot list-things
 
 Create new job
 ```
+import boto3
+
+client = boto3.client('iot')
 response = client.create_job(
     jobId='string',                            // Specify an ID.
     targets=[                                  // Device ARN (Amazon Resource Names)
