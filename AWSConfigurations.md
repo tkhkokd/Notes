@@ -196,7 +196,7 @@ You will be prompted for the password.
 * remove \
 
 ## AWS IoT
-###IoT devices and shadow RESTful API
+### IoT devices and shadow RESTful API
 
 Shadow RESTful API endpoint URL
 ```
@@ -259,12 +259,25 @@ response = client.create_job(
 
 - Publish & Subscribe broker service
 
-- Sends and receives messages to and from AWS
-IoT.
+- Sends and receives messages to and from AWS IoT.
 
 - A client can send messages, specifying a topic URL, all the clients subscribing to the topic receives the message.
 
 - Protocols: MQTT/HTTP/MQTT+Websocket
+
+### Worlflow
+
+First, a device has to subscribe to topics in order for the device to start performing jobs.
+
+1. Device comes online and subscribe to ```notify-next``` topic.
+2. Call the ```DescribeJobExecution``` MQTT API with jobId ```$next```
+3. Call the ```UpdateJobExecution``` MQTT API
+* ```StartNextPendingJobExecution``` does step 2 and 3 at once.
+4. Perform the actions in the job document by ```UpdateJobExecution```
+5. ```DescribeJobExecution``` to monitor job execution
+6. Call the ```UpdateJobExecution``` MQTT API to update the job execution status
+
+
 
 
 
