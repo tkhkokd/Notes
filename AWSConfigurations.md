@@ -195,10 +195,10 @@ psql \
 You will be prompted for the password.
 * remove \
 
-### IoT Devices
+## AWS IoT
+###IoT devices and shadow RESTful API
 
 Shadow RESTful API endpoint URL
-
 ```
 https://ENDPOINT/things/THING_NAME/shadow
 ```
@@ -211,6 +211,60 @@ List things from CLI
 aws iot list-things
 ```
 
+### Jobs
+
+Create new job
+```
+response = client.create_job(
+    jobId='string',                            // Specify an ID.
+    targets=[                                  // Device ARN (Amazon Resource Names)
+        'string',
+    ],
+    documentSource='string',                   // Document link at S3.
+    document='string',                         // Document title
+    description='string',                      // Short description of the job
+    presignedUrlConfig={
+        'roleArn': 'string',                   // Role ARN defined in IAM.
+        'expiresInSec': 123
+    },
+    targetSelection='CONTINUOUS'|'SNAPSHOT',   // See the description below for the detail.
+    jobExecutionsRolloutConfig={
+        'maximumPerMinute': 123
+    },
+    documentParameters={                       // Parameters for the job document.
+        'string': 'string'
+    }
+)
+```
+
+- Job: is a remote operation. Created and managed using the Jos HTTPS API, AWS CLI or AWS SDKs.
+
+- Job document: JSON document. Containing descriptions of the remote operations to be performed by the devices. Stored in S3 bucket.
+
+- Target: target devices or groups of devices.
+
+- Protocols: MQTT/HTTP SigV4/HTTP TLS
+
+- Job execution: target starts an execution of a job by downloading the job document.
+
+- Snapshot job: a single job, not continuous.
+
+- Continuous job: a continuous job.
+
+- Rollouts:
+
+- Presigned URLs: for time-limited access to data in job document.
+
+### Message Broker
+
+- Publish & Subscribe broker service
+
+- Sends and receives messages to and from AWS
+IoT.
+
+- A client can send messages, specifying a topic URL, all the clients subscribing to the topic receives the message.
+
+- Protocols: MQTT/HTTP/MQTT+Websocket
 
 
 
