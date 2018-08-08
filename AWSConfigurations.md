@@ -7,6 +7,16 @@ aws configure
 python3
 ```
 
+## Dynamo DB
+  Primary key
+    Partition key - ex. itemID
+    Sort key      - ex. SongID, AlbumID, EventID
+  Point-in-time recovery (PITR) - Automatic backups of table data.
+  Encryption (at rest) - uses AWS Key Management Service. Can only be enabled at table creation. Can't be disabled.
+  Time to live (TTL) - Delete items when they expire. No extra cost by enabling TTL. Per item basis.
+
+
+
 ## Lambda
 
 ```python
@@ -240,37 +250,28 @@ response = client.create_job(
 )
 ```
 
-- Job: is a remote operation. Created and managed using the Jos HTTPS API, AWS CLI or AWS SDKs.
-
-- Job document: JSON document. Containing descriptions of the remote operations to be performed by the devices. Stored in S3 bucket.
-
-- Target: target devices or groups of devices.
-
+- Job: is a remote operation. Created and managed using the Jos HTTPS API, AWS CLI or AWS SDKs
+- Job document: JSON document. Containing descriptions of the remote operations to be performed by the devices. Stored in S3 bucket
+- Target: target devices or groups of devices
 - Protocols: MQTT/HTTP SigV4/HTTP TLS
-
-- Job execution: target starts an execution of a job by downloading the job document.
-
-- Snapshot job: a single job, not continuous.
-
-- Continuous job: a continuous job.
-
+- Job execution: target starts an execution of a job by downloading the job document
+- Snapshot job: a single job, not continuous
+- Continuous job: a continuous job
 - Rollouts:
-
 - Presigned URLs: for time-limited access to data in job document.
 
 ### Message Broker
 
 - Publish & Subscribe broker service
-
-- Sends and receives messages to and from AWS IoT.
-
-- A client can send messages, specifying a topic URL, all the clients subscribing to the topic receives the message.
-
+- Sends and receives messages to and from AWS IoT
+- A client can send messages, specifying a topic URL, all the clients subscribing to the topic receives the message
 - Protocols: MQTT/HTTP/MQTT+Websocket
 
 ### Worlflow
 
 First, a device has to subscribe to topics in order for the device to start performing jobs.
+
+Use AWS SDK or AWS CLI.
 
 1. Device comes online and subscribe to ```notify-next``` topic.
 2. Call the ```DescribeJobExecution``` MQTT API with jobId ```$next```
