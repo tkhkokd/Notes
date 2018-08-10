@@ -1133,9 +1133,6 @@ y := <-c
 ```
 * The order in which two channels end up processing and writing to c is not guaranteed, therefore either one of the values will be assigned to x and y in different runs.
 
-
-
-
 ## Errors
 Go does not have exceptions, errors have to be handled manually
 ### Check if there's any error while running using console
@@ -1154,3 +1151,9 @@ go get
 go install
 go build
 ```
+## Verbs
+```go
+\t      tab
+\n
+```
+
