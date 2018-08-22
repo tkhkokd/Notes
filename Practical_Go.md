@@ -138,4 +138,17 @@ Ints:  [2 4 7]
 Sorted: true
 ```
 
+## Type Switches
 
+```.(type)```separates type info from the variable.
+
+```go
+switch v := i.(type) {
+case int:
+    // here v has type T
+case string:
+    // here v has type S
+default:
+    // no match; here v has the same type as i
+}
+```
