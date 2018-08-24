@@ -140,7 +140,7 @@ Sorted: true
 
 ## Type Switches
 
-```.(type)```separates type info from the variable.
+```.(type)```separates type info from the variable. Although the switch compares types, ```v``` has the value of ```i```.
 
 ```go
 switch v := i.(type) {
