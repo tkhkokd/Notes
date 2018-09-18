@@ -281,6 +281,35 @@ Use AWS SDK or AWS CLI.
 5. ```DescribeJobExecution``` to monitor job execution
 6. Call the ```UpdateJobExecution``` MQTT API to update the job execution status
 
+### Amazon RDS Security
+
+By default network access is turned off to a DB instance.
+
+Related Security Groups:
+- VPC Security Groups => Between DB instances and EC2 instances inside a VPC. Enables specific source to access a DB instance in a VPC.
+
+- EC2 Security Groups => Access to EC2
+
+- DB Security Groups (Legacy) => EC2-Classic DB instances outside of the VPC (EC2-Classic is the old version of EC2-VPC, new customers after 2013-12-04 will only use EC2-VPC)
+
+1. specify rules in a security group (about IP address range, port, EC2 security group)
+
+#### VPC Security Groups
+
+Set Inboud Rules & Outbound Rules, Tags (optional).
+
+Enables specific source to access a DB instance in a VPC.
+By specifying:
+- A range of addresses (ex. 203.0.113.0/24) or
+- Another VPC security group.
+
+Specify a port from which each range of address accesses DB instances.
+Need SSH access to instances in the VPC?
+=> Allow access to TCP port 22 for the specified range of addresses.
+
+
+
+
 
 
 
