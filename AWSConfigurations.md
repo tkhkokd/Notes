@@ -4,8 +4,18 @@
 pip3 install boto3
 aws configure
 // Set credentials
+aws configure list
+// List profiles
 python3
 ```
+
+## AWS CLI
+```
+// See credentials stored
+cd ~/.aws
+stt
+```
+
 
 ## Dynamo DB
   Primary key
@@ -15,7 +25,53 @@ python3
   Encryption (at rest) - uses AWS Key Management Service. Can only be enabled at table creation. Can't be disabled.
   Time to live (TTL) - Delete items when they expire. No extra cost by enabling TTL. Per item basis.
 
+## AWS API GATEWAY
+CORS(Cross Origin Resource Sharing) = Needs to be allowed when you access the endpoint from domains other than the domain of the API provider)
+Lambda-proxy-integration = Lambda is responsible for returning response, API Gateway does not transform the  response.
 
+Create an endpoint
+   Actions => Create Resource, set resource path => [Create Resource] => Add Method
+
+[Deploy API]
+#### Integration Request
+Use Lambda Proxy Integration => passes requests with metadata, not just the requests body
+
+#### Method Request with API Key
+- Set API key required => true (Make sure to Deploy)
+- HTTP request should include a header “X-API-KEY”
+GET request
+```
+curl -H "X-API-KEY: xxxxxxxxxxxxx <endpoint_url>
+```
+POST request
+```
+curl -H "Content-Type: application/json" -H "X-API-KEY: xxxxxxxxxxxxx"
+     --request POST
+     --data '{
+    "key1": "value1",
+    "key2": "value2",
+    "key3": "value3"
+  }' <endpoint_url>
+```
+
+#### List APIs
+```python
+aws apigateway get-rest-apis --profile
+```
+#### Modify resources
+```python
+aws apigateway update-resource --rest-api-id xxxxx --resource-id xxxxx --patch-operations 'op=replace,path=/pathPart,value="{xxx}"' --profile xxx
+```
+
+#### Integration response
+- Lambda integration, using integration response is a must.
+- Lambda allows custom error response (in any valid JSON)
+- String must be converted to JSON
+
+#### Export API as Swagger file
+```python
+aws apigateway get-export --rest-api-id ydljpm7l1a --stage-name dev --export-type swagger /Desktop/apibeta.json --profile svadmin
+```
 
 ## Lambda
 
@@ -280,6 +336,17 @@ Use AWS SDK or AWS CLI.
 4. Perform the actions in the job document by ```UpdateJobExecution```
 5. ```DescribeJobExecution``` to monitor job execution
 6. Call the ```UpdateJobExecution``` MQTT API to update the job execution status
+
+### Amazon Virtual Private Cloud (VPC)
+
+Subnets enables to group aws resources (instances) by security needs.
+Internet Gateway is the gateway between a VPC and the Internet.
+
+Creating a PUBLIC facing instance in a subnet (within a VPC).
+The instance will be able to communicate with the internet or local computer using SSH.
+
+
+
 
 ### Amazon RDS Security
 
