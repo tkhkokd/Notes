@@ -67,11 +67,18 @@ aws apigateway update-resource --rest-api-id xxxxx --resource-id xxxxx --patch-o
 - Lambda integration, using integration response is a must.
 - Lambda allows custom error response (in any valid JSON)
 - String must be converted to JSON
+- To make Lambda error regex work, in Python use:
+```
+raise Exception(somthing)
+```
 
 #### Export API as Swagger file
 ```python
 aws apigateway get-export --rest-api-id ydljpm7l1a --stage-name dev --export-type swagger /Desktop/apibeta.json --profile svadmin
 ```
+
+
+
 
 ## Lambda
 
