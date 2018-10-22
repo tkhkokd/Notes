@@ -86,6 +86,24 @@ Placing lambda function inside an VPC means it can only access AWS resources wit
 ### Accessing S3 bucket
 Use VPC endpoiont for S3
 
+#### Uploading image to S3 using Base64
+
+```python
+import boto3
+
+bucket = "bucketname"
+datetime = '{:%Y%m%d_%H%M%S}'.format(datetime.datetime.now()))
+
+def handler(event, context):
+    encoded_image = event['encoded_image']
+    file_name = datetime + ".txt"
+    s3_path = file_name
+
+    s3 = boto3.resource("s3")
+    s3.Bucket(bucket).put_object(Key=s3_path, Body=encoded_image)
+```
+
+
 ```python
 def handler_name(event, context):   # event: some data passed by the event(trigger)
     ...                             # context: runtime info
