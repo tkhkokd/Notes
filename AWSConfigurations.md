@@ -82,6 +82,10 @@ aws apigateway get-export --rest-api-id ydljpm7l1a --stage-name dev --export-typ
 
 ## Lambda
 
+Placing lambda function inside an VPC means it can only access AWS resources within that VPC.
+### Accessing S3 bucket
+Use VPC endpoiont for S3
+
 ```python
 def handler_name(event, context):   # event: some data passed by the event(trigger)
     ...                             # context: runtime info
@@ -382,7 +386,9 @@ Need SSH access to instances in the VPC?
 => Allow access to TCP port 22 for the specified range of addresses.
 
 
-
+## Errors and solutions
+Lambda timeout
+ - are the target AWS resources placed within the same VPC? (ex. S3)
 
 
 
