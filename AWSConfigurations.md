@@ -410,6 +410,116 @@ Lambda timeout
 
 
 
+NOTES (Merge and organise later)
+
+Practice test 2
+Q.33
+
+IAM
+  Best Practices
+    - the principle of least privilage, granting only the permissions required to perform a task.
+
+
+CloudWatch
+  - doesn't support Memory Usage Metric (by default)
+    Supports
+      CPU Usage
+      Disk Read Operation
+      Network In and Out
+  - can send notifications if there's an issue in EC2 instances.
+  - can stop and start EC2 instance based on health check alarms.
+
+
+AWS OpsWorks - Coniguration management service, lets you use Chef and Puppet to automate server configuration, deployment and management across EC2 and on-premises servers.
+
+Chef and Puppet - Automation platforms, use code to automate the configurations of servers.
+
+EC2
+  - Access an instance by using Key Pairs. NOT Access keys.
+  - AMI is a regional resource, needs to be copied.
+  - Needs an Public/Elastic IP address to be accessed from the Internet.
+
+  RAID Configuration
+  > In case of RAID Configuration
+    - Should stop all I/O activity of the volumes before creating a snapshot
+
+  Handling API Credentials
+    - Create a new role in IAM, assign it to the EC2 instance.
+
+Database
+  - Infrequently Accessed data => Cold HDD
+
+  Amazon Glacier - Data Archives
+
+  DynamoDB - Single-digit millisecond latency at any scale
+    - Supports document and key-value store models.
+
+Elastic IP Address (EIP)
+  The importance of EIP is to avoid failures of traffic distribution from the domain (URL) to EC2 instances.
+  - It's nothing but a static public IPv4 address
+  - Attach 1 EIP to your account / release it when you won't use it
+  - Attach EIP to EC2 instances
+  - EIP will distribute traffic to EC2 instances that are active, healthy
+
+  Domain => EIP => EC2 instances
+
+
+Elastic Load Balancer (ELB)
+  - Distributes incoming traffic across multiple EC2 instances (within single or multiple AZ), better Fault Tolerance
+
+  Server Order Preference
+
+  Predefined Security Policy
+
+  Perfect Forward Secrecy (PFS)
+    - Additional safeguards against eavesdropping of encrypted data.
+    - uses unique random session key.
+    - these prevents decoding of captured data
+    - even if the secret long-term key is compromised.
+    - Cloudfront also supports PFS.
+
+VPC
+  - Needs an attached Internet Gateway (IGW)
+  - Needs Subnet's route table pointing to the IGW.
+  - EC2 instances in the Subnets needs Globally unique IP address (IPv4/Elastic IP/ IPv6)
+  Bastion Host - Act as a jump server to connect to other instances in a VPC, and nothing else.
+  - Create a *small* EC2 instance with only a security group allowing access to port 22 from a particular IP address.
+
+  NACL (Network Access Control Lists)
+    - define if inter-subnet communication is allowed or not.
+
+
+SSH Connection to Linux intance in VPC
+  - Public/Elastic IP address
+  - Internet Gateway
+  - Network access control and Security Group rules to allow access to relevant traffic.
+
+
+AWS Direct Connect
+
+Elasticache
+  - caches content to mprove the performance of app.
+
+SQS
+  - maximum retention period 14 days
+  - can contain UNLIMITED number of messages.
+
+  Best Practices
+    - In case there's a priority for premium members,
+    create 2 SQS queues for each type of members, Configure EC2 instances to consume messages from the premium queues first.
+
+AWS Security Groups
+
+  - Define inter-subnet communication for a specific port and protocol
+
+AWS Shared Responsibility Model
+  Customer Responsibility
+  - OS Patching
+  - Configure Security Groups, NACL
+  - IAM and credential management
+  - Encryption of data, and its transit
+
+
 
 
 
