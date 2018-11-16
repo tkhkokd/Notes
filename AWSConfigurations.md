@@ -410,6 +410,36 @@ Lambda timeout
 
 
 
+## EC2
+
+### Ubuntu instance
+
+1. Connect via SSH
+```
+chmod 400 <PRIVATE_KEY_FILE PATH>
+ssh -i "<PRIVATE_KEY_FILE PATH>" ubuntu@<PUBLIC_DNS_PATH>
+
+ex. PUBLIC_DNS_PATH
+ec2-xx-xx-xx-xx.eu-central-1.compute.amazonaws.com
+```
+
+2. Install required libraries
+```
+sudo apt-get update
+sudo apt-get install apache2
+sudo apt-get install libapache2-mod-wsgi
+sudo apt-get install python-pip
+sudo apt-get install python-pip
+sudo pip install flask
+```
+
+Uploading files to EC2
+```
+scp -i <PRIVATE_KEY_FILE PATH> <FILE_PATH> ubuntu@<PUBLIC_DNS_PATH>:<FILE_PATH>
+```
+
+
+
 NOTES (Merge and organise later)
 
 Practice test 2
