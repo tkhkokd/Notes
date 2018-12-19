@@ -418,12 +418,42 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html
 Start-up script (Re-launch, restart)
 https://aws.amazon.com/premiumsupport/knowledge-center/execute-user-data-ec2/?nc1=h_ls
 
-- Shell script
-- cloud init directives
+- Shell script (Easiest way)
+  Cloud-init Output Log File (/var/log/cloud-init-output.log) captures the output of the script.
+
+  The script must start with ```#!``` and the path to the script interpreter (ex. bash)
+  ex. ```/bin/bash```
+
+  ``` Example Script
+  #!/bin/bash
+  yum update -y
+  amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
+  yum install -y httpd mariadb-server
+  systemctl start httpd
+  systemctl enable httpd
+  usermod -a -G apache ec2-user
+  chown -R ec2-user:apache /var/www
+  chmod 2775 /var/www
+  find /var/www -type d -exec chmod 2775 {} \;
+  find /var/www -type f -exec chmod 0664 {} \;
+  echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
+  ```
+  DO NOT USE ```sudo```
+
+#### Specify User Data at Launch
+```
+aws ec2 run-instances --image-id ami-abcd1234 --count 1 --instance-type m3.medium \
+--key-name my-key-pair --subnet-id subnet-abcd1234 --security-group-ids sg-abcd1234 \
+--user-data file://my_script.txt
+```
+
+- Cloud init directives
 
 Things to include in the start-up script
-- packages, software updates
-- installation
+- Packages, software updates
+- Installation
+
+
 
 ### Ubuntu instance
 
