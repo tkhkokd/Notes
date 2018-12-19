@@ -412,6 +412,19 @@ Lambda timeout
 
 ## EC2
 
+### 2 types of Start-up script
+Start-up script (Initial launch)
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html
+Start-up script (Re-launch, restart)
+https://aws.amazon.com/premiumsupport/knowledge-center/execute-user-data-ec2/?nc1=h_ls
+
+- Shell script
+- cloud init directives
+
+Things to include in the start-up script
+- packages, software updates
+- installation
+
 ### Ubuntu instance
 
 1. Connect via SSH
