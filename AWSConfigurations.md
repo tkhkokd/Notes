@@ -433,9 +433,20 @@ sudo apt-get install python-pip
 sudo pip install flask
 ```
 
-Uploading files to EC2
+Zip the application
+```
+zip -r archive_name.zip folder_to_compress
+```
+
+Upload files to EC2
 ```
 scp -i <PRIVATE_KEY_FILE PATH> <FILE_PATH> ubuntu@<PUBLIC_DNS_PATH>:<FILE_PATH>
+```
+
+In Ubuntu instance
+```
+sudo apt-get install unzip
+unzip archive_name.zip
 ```
 
 
