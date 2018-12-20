@@ -2,28 +2,40 @@
 
 # LINUX
 
+### Packages
 List packages
 ```
 apt list --installed
 ```
-
 Updates the package list, get information about newest version of the packages and their dependencies.
 ```
 sudo apt-get update
 ```
-
 Upgrades the existing packages, if APT knows about the new versions by running the above command ```apt-get update```
 ```
 sudo apt-get upgrade
 ```
 
-## Mosquitto
+###Sessions
 
+Create new session
+```screen```, with a session name ```screen -S SESSION_NAME```
+
+List Sessions
+```screen -ls```
+
+Detache (Leave the screen, != terminate)
+```Ctrl+a, d```
+Resume to the screen
+```screen -r SESSION_ID```
+
+
+## Mosquitto
 
 ###Create Authentication
 
 1. First, stop the mosquitto
-```sudo stop mosquitto```
+```sudo service mosquitto stop```
 2. creates a password file. ```-c``` = create
 ```
 sudo mosquitto_passwd -c /etc/mosquitto/passwd <user_name>
@@ -39,3 +51,6 @@ allow_anonymous false
 ```
 mosquitto -c /etc/mosquitto/mosquitto.conf
 ```
+
+
+

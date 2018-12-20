@@ -16,15 +16,3 @@ TCP (Transmission Control Protocol)
 
 UDP (User Datagram Protocol)
 - Alternative to TCP
-
-
-
-## Mosquitto
-
-
-Create Authentication
-On the Linux server,
-```
-sudo mosquitto_passwd -c /etc/mosquitto/passwd <user_name>
-```
-creates a password file. ```-c``` = create
