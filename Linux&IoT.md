@@ -18,16 +18,25 @@ sudo apt-get upgrade
 
 ###Sessions
 
-Create new session
+Keep the server session running, use ```screen```
+
+####Create new session
 ```screen```, with a session name ```screen -S SESSION_NAME```
 
-List Sessions
+####List Sessions
 ```screen -ls```
 
-Detache (Leave the screen, != terminate)
-```Ctrl+a, d```
-Resume to the screen
+####Detache (Leave the screen, != terminate)
+```Ctrl+<a>, <d>```
+
+####Resume to the screen
 ```screen -r SESSION_ID```
+
+####Split the screen (Vertical)
+```Ctrl+<a>, <|>(vertical line)```
+####Undo screen split
+```Ctrl+<a>, <X>```
+
 
 
 ## Mosquitto
