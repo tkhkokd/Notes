@@ -10,7 +10,9 @@ A CircleCI project is composed of:
 
 - A Version
 - Build Jobs
-- Executor (Virtual Environment, e.g Docker)
+- Executor (Virtual Environment, e.g Docker, macOS, LinuxVM)
+    https://circleci.com/docs/2.0/executor-types/#section=configuration
+
 - Other Services
 - Environment Variables
 - Steps (List of commands)
@@ -67,4 +69,40 @@ jobs: # A basic unit of work in a run
           path: test-results
           destination: tr1
 ```
+
+
+Config for Running Pytest
+- Virtual env is not needed as Docker is already a virtual env
+
+```
+version: 2 # use CircleCI 2.0
+jobs: # A basic unit of work in a run
+  build: # runs not using Workflows must have a `build` job as entry point
+
+    working_directory: ~/mobileapp-api-endpoint
+    docker: # run the steps with Docker
+
+      - image: circleci/python:3.6.4
+    steps: # steps that comprise the `build` job
+      - checkout # check out source code to working directory
+      - run:
+         name: Install Pytest
+         command: sudo pip install pytest
+      - run:
+         name: Install Boto3
+         command: sudo pip install boto3
+      - run:
+         name: requests
+         command: sudo pip install requests
+      - run:
+         name: Run Pytest
+         command: pytest -s
+```
+
+
+
+
+
+
+
 
