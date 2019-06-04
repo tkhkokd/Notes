@@ -2,6 +2,14 @@
 
 # LINUX
 
+### Process
+
+```htop``` Shows all processes
+
+```kill -HUP PID```
+```PID```: Process ID
+```-HUP``` could be ```-SIGHUP```: Signal Hangup
+
 ### Packages
 List packages
 ```
@@ -20,28 +28,45 @@ sudo apt-get upgrade
 
 Keep the server session running, use ```screen```
 
-####Create new session
+Create new session
 ```screen```, with a session name ```screen -S SESSION_NAME```
 
-####List Sessions
+List Sessions
 ```screen -ls```
 
-####Detache (Leave the screen, != terminate)
+Detache (Leave the screen, != terminate)
 ```Ctrl+<a>, <d>```
 
-####Resume to the screen
+Resume to the screen
 ```screen -r SESSION_ID```
 
-####Split the screen (Vertical)
+Split the screen (Vertical)
 ```Ctrl+<a>, <|>(vertical line)```
-####Undo screen split
+
+Undo screen split
 ```Ctrl+<a>, <X>```
 
+Terminate screen
+```Ctrl+<a>, <K>```
 
 
 ## Mosquitto
 
-###Create Authentication
+### Mosquitto Configuration
+
+
+
+### Create Authentication
+
+```conf```file must say
+```
+allow_anonymous false
+password_file PASSWORD_FILE_PATH
+```
+
+Create password file in ```etc\mosquitto ```
+```mosquitto_passwd -b passwordfile USER_NAME PASSWORD```
+
 
 1. First, stop the mosquitto
 ```sudo service mosquitto stop```

@@ -1,20 +1,22 @@
-## AWS SDK
-
-```
-pip3 install boto3
-aws configure
-// Set credentials
-aws configure list
-// List profiles
-python3
-```
 
 ## AWS CLI
+
+### Credentials (Profiles)
+
+Set credentials
+```aws configure --profile PROFILE_NAME```
+List Credentials
+```aws configure list```
+
 ```
 // See credentials stored
 cd ~/.aws
 stt
 ```
+
+## CloudFormation
+```DependsOn``` Defines resource creation order. Specify the resource to follow.
+
 
 
 ## Dynamo DB
